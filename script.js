@@ -1,3 +1,6 @@
-require('dotenv').config()
+require('dotenv').config();
 
-console.log(process.env)
+const apiSecret = process.env.OPENAI_API_KEY;
+
+console.log(process.env);
+console.log(apiSecret);
