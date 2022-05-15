@@ -1,4 +1,4 @@
-OPENAI_API_KEY=;
+OPENAI_API_KEY= "";
 const apiSecret = OPENAI_API_KEY;
 const promptButton = document.getElementById("submit");
 const results = [];
@@ -10,12 +10,9 @@ function apiCall() {
   const input = document.getElementById("prompt").value.trim();
   console.log(input);
   const data = {
-    prompt: input,
-    temperature: 0.5,
-    max_tokens: 60,
-    top_p: 1,
-    frequency_penalty: 0,
-    presence_penalty: 0,
+    prompt: "Convert this into emojis\n\n" + input + ".",
+    temperature: 0.1,
+    max_tokens: 50,
    };
     
    fetch("https://api.openai.com/v1/engines/text-curie-001/completions", {
@@ -37,14 +34,14 @@ function apiCall() {
         console.log("the result is" + newResult.response);
         results.unshift(newResult);
         console.log(results);
-        const resultContainer = document.createElement('section');
+        const resultContainer = document.createElement("section");
         const parent = document.getElementById("response_parent_container");
         parent.prepend(resultContainer);
-        const responsesPrompt = document.createElement('div');
-        const responsesResponse = document.createElement('div');
+        const responsesPrompt = document.createElement("div");
+        const responsesResponse = document.createElement("div");
         resultContainer.appendChild(responsesPrompt);
         resultContainer.appendChild(responsesResponse);
-        console.log(results)
+        console.log(results);
         responsesPrompt.innerHTML = "<h3>Prompt:</h3> " + "<p>" + results[0].prompt + "</p>";
         responsesResponse.innerHTML = "<h3>Response:</h3> " + "<p>" + results[0].response + "</p>"; 
        });
