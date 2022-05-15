@@ -1,9 +1,8 @@
-OPENAI_API_KEY=
+OPENAI_API_KEY=;
 const apiSecret = OPENAI_API_KEY;
 const promptButton = document.getElementById("submit");
 
 console.log(apiSecret);
-const results = [];
 
 function apiCall() {
   event.preventDefault();
@@ -31,21 +30,32 @@ function apiCall() {
      if (response.ok) {
        response.json().then(function(data) {
         console.log(data);
+        const results = [];
         let newResult = {
           "prompt": input,
           "response": data.choices[0].text
         };
         console.log("the result is" + newResult.response);
+
         results.unshift(newResult);
         console.log(results);
-
-
-
-
+  
+        results.forEach(result => {
+          console.log(result.prompt);
+          const resultContainer = document.createElement('div');
+          const parent = document.getElementById("response_parent_container");
+          parent.appendChild(resultContainer);
+          const responsesPrompt = document.createElement('p');
+          const responsesResponse = document.createElement('p');
+          resultContainer.appendChild(responsesPrompt);
+          resultContainer.appendChild(responsesResponse);
+          responsesPrompt.innerHTML += "Prompt: " + result.prompt;
+          responsesResponse.innerHTML += "Response: " + result.response;   
+        })
        })
      }
-   })
 
+   })
 }
 
 promptButton.addEventListener("click", apiCall);
