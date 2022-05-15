@@ -38,7 +38,7 @@ function apiCall() {
         const responseHeader = document.getElementById("response_title");
         responseHeader.innerText = "✨Responses✨";
         const resultContainer = document.createElement("div");
-        resultContainer.className = "container";
+        resultContainer.className = "container has-background-primary mb-5 px-3 rounded-corners";
         parent.prepend(resultContainer);
         const responsesPrompt = document.createElement("div");
         const responsesResponse = document.createElement("div");
@@ -47,8 +47,8 @@ function apiCall() {
         resultContainer.appendChild(responsesPrompt);
         resultContainer.appendChild(responsesResponse);
         console.log(results);
-        responsesPrompt.innerHTML = "<h3 class='subtitle column is-one-fifth'>Prompt:</h3> " + "<p class='column is-three-quarters'>" + results[0].prompt + "</p><br />";
-        responsesResponse.innerHTML = "<h3 class='subtitle column is-one-fifth'>Response:</h3> " + "<p class='column is-three-quarters'>" + results[0].response + "</p><br />"; 
+        responsesPrompt.innerHTML = "<h3 class='subtitle column is-one-fifth'>Prompt:</h3> " + "<p class='column'>" + results[0].prompt + "</p><br />";
+        responsesResponse.innerHTML = "<h3 class='subtitle column is-one-fifth'>Response:</h3> " + "<p class='column'>" + results[0].response + "</p><br />"; 
        });
      };
    });
