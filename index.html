@@ -6,30 +6,32 @@
     <title>There's an Emoji for that</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
     <link rel="stylesheet" href="./style.css">
   </head>
   <body>
-    <header class="header">
-       <h1>👻❤️🥇There's an emoji for that! 🙊🥳🌈 </h1>
+    <header class="hero">
+       <h1 class="title hero-body">👻❤️🥇There's an emoji for that! 🙊🥳🌈 </h1>
     </header>
     <main>
-      <h2>👀 Using words to express yourself is sooooo overrated. Have something to say? There's an emoji for that! Enter your text below to have it converted into emoji speak. 🤯🔥😎</h2>
-      <form>  
-        <div>
-          <label for="prompt">Enter prompt👩‍💻:</label>
-          <input type="textbox" id="prompt" name="prompt">
+      <section class="section">
+        <h2 class="title">Using words to express yourself is sooooo overrated 🥱</h2>
+        <h3 class="subtitle"> Have something to say? <strong>There's an emoji for that!</strong> <br /> Enter your text below to have it converted into <strong>emoji speak</strong>. 🤯🔥😎</h3>
+      </section>
+      <form class="section">  
+        <div class="field">
+          <label class="label" for="prompt">Enter prompt👩‍💻 :</label>
+          <div class="control">
+            <textarea class="textarea is-small is-hovered" id="prompt"></textarea>
+          </div>
         </div>
-        <button type="submit" id="submit">Submit ✅</button>
+        <button class="button is-primary is-hover" type="submit" id="submit">Submit ✅</button>
       </form>
-      <section class="response_section">
-        <h2>✨Responses✨</h2>
+      <section class="section" id="response_section">
+        <h2 class="title" id="response_title"></h2>
         <div id="response_parent_container"></div>
       </section>
-
     </main>
-    
-
-    
-    <script src="./script.js" async defer></script>
+    <script src="./script.js"></script>
   </body>
 </html>
