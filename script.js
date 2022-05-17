@@ -2,12 +2,13 @@ OPENAI_API_KEY= "";
 const apiSecret = OPENAI_API_KEY;
 const promptButton = document.getElementById("submit");
 const results = [];
+const textArea = document.getElementById("prompt");
 console.log(apiSecret);
 
 function apiCall() {
   event.preventDefault();
+  textArea.focus;
   console.log("api call function ran")
-  const textArea = document.getElementById("prompt");
   const input = textArea.value.trim();
   textArea.value = "";
   console.log(input);
@@ -41,7 +42,7 @@ function apiCall() {
         const responseHeader = document.getElementById("response_title");
         responseHeader.innerText = "✨Responses✨";
         const resultContainer = document.createElement("div");
-        resultContainer.className = "container has-background-primary mt-6 px-3 rounded-corners";
+        resultContainer.className = "container has-background-primary mt-6 p-3 rounded-corners";
         //prepend instead of appendChild to results go from newest to oldest
         parent.prepend(resultContainer);
         const responsesPrompt = document.createElement("div");
@@ -56,16 +57,22 @@ function apiCall() {
         const resultsResponse = results[0].response.replace(/(\r\n|\n|\r)/g, " ");
         responsesPrompt.innerHTML = "<h3 class='subtitle column is-narrow has-text-white'>Prompt:</h3> " + "<p class='column'>" + resultsPrompt + "</p><br />";
         responsesResponse.innerHTML = "<h3 class='subtitle column is-narrow has-text-white'>Response:</h3> " + "<p class='column'>" + resultsResponse + "</p><br />"; 
-        const twitterShare = document.createElement("span");
-        twitterShare.className = "is-pulled-right pt-3 px-3 m-3 has-text-white has-background-info rounded-corners";
+        const twitterShare = document.createElement("button");
+        responsesResponse.appendChild(twitterShare);
+        twitterShare.className = "button is-hover is-info is-small m-2";
         const tweet = encodeURI(resultsResponse);
         console.log(tweet);
-        twitterShare.innerHTML = "<i class='fa-brands fa-twitter-square fa-xl'></i> <a class='has-text-white' target='blank' href='https://twitter.com/intent/tweet?text=" + tweet + "'>" + "Share on Twitter" + "</a>";
-        responsesResponse.appendChild(twitterShare);
-
+        twitterShare.innerHTML = "<i class='fa-brands fa-twitter-square fa-xl mr-2'></i> <a class='has-text-white' target='blank' href='https://twitter.com/intent/tweet?text=" + tweet + "'>" + "Tweet" + "</a>";
        });
      };
    });
 };
 
 promptButton.addEventListener("click", apiCall);
+
+textArea.addEventListener("keypress", function onEvent(event) {
+  if (event.key === "Enter") {
+    event.preventDefault();
+    promptButton.click();
+  }
+});
