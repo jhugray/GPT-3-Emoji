@@ -1,4 +1,5 @@
-const apiSecret = OPENAI_API_KEY;
+
+const apiSecret = process.env.OPENAI_API_KEY;
 const promptButton = document.getElementById("submit");
 const results = [];
 const textArea = document.getElementById("prompt");
