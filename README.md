@@ -4,7 +4,7 @@
 
 A text to emoji converter, powered by [OpenAI](https://openai.com/blog/openai-api/(https://openai.com/about/) "OpenAI's about page")'s GPT 3 model. Users can share their generated emoji message on Twitter. 
 
-Deployed page: [There's an emoji for that](https://theres-an-emoji-for-that.netlify.app/)
+Deployed page: [There's an emoji for that](https://theres-an-emoji-for-that.netlify.app/).
 
 Built by [Jess Hause Ugray](https://github.com/jhugray).
 
