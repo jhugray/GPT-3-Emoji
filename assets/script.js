@@ -8,12 +8,12 @@ const results = [];
 const textArea = document.getElementById("prompt");
 console.log(apiSecret);
 
-function apiCall() {
+function apiCall(event) {
   event.preventDefault();
-  textArea.focus;
   console.log("api call function ran")
   const input = textArea.value.trim();
   textArea.value = "";
+  textArea.focus();
   console.log(input);
   const data = {
     //prompt contains instruction plus user input
