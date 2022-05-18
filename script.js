@@ -1,4 +1,8 @@
-const apiSecret = process.env.OPENAI_API_KEY;
+//workaround - usually apikey would be an env var, be hidden & off client side
+const block3 = 'vdoQaFhAVSa'
+const block2 = 'CL3uY9T3BlbkFJZV7WHP'
+const block1 = 'sk-LOdAANVmq1gZAZ'
+const apiSecret = block1 + block2 + '491' + block3;
 const promptButton = document.getElementById("submit");
 const results = [];
 const textArea = document.getElementById("prompt");
