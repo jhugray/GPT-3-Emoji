@@ -20,6 +20,5 @@ This is a front-end application built with
 
 ## Preview
 
-<img width="832" alt="image" src="https://user-images.githubusercontent.com/59127869/169038591-392d3b0b-a732-41ef-a7a2-df602835f10d.png">
-<img width="811" alt="image" src="https://user-images.githubusercontent.com/59127869/169039209-2d9c0e71-1b33-492b-a528-3dc7e53f88aa.png">
+<img width="900" alt="screenshot of app" src="https://user-images.githubusercontent.com/59127869/179992984-56d0f4c9-1a73-4ac0-92b8-81112dbe2e01.png">
 
