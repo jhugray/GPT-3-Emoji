@@ -1,9 +1,15 @@
-.rounded-corners {
-  border-radius: 4px;
-}
 main {
   margin: 20px;
 }
 body {
   background-color: #FDFDFD;
+}
+.rounded-corners {
+  border-radius: 4px;
+}
+.large-font {
+  font-size: large
+}
+.intro {
+  padding:2em 0 0 0;
 }

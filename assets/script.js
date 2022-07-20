@@ -58,7 +58,7 @@ function apiCall(event) {
         const resultsPrompt = results[0].prompt;
         //regex w/ global match used to remove new lines/breaks and insert a space instead
         const resultsResponse = results[0].response.replace(/(\r\n|\n|\r)/g, " ");
-        responsesPrompt.innerHTML = "<h3 class='subtitle column is-narrow has-text-white'>Prompt:</h3> " + "<p class='column'>" + resultsPrompt + "</p><br />";
+        responsesPrompt.innerHTML = "<h3 class='subtitle column is-narrow has-text-white'>Prompt:</h3> " + "<p class='column'><strong>" + resultsPrompt + "</strong></p><br />";
         responsesResponse.innerHTML = "<h3 class='subtitle column is-narrow has-text-white'>Response:</h3> " + "<p class='column'>" + resultsResponse + "</p><br />"; 
         const twitterShare = document.createElement("button");
         responsesResponse.appendChild(twitterShare);
